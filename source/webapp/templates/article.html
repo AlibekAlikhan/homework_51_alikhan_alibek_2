@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Article</title>
+</head>
+<body>
+<h1>Article</h1>
+{%if satiety >= 50%}
+<img src="https://avatars.mds.yandex.net/i?id=00f63b9df15f28d4d94d48472c55747e13fa64cd-8199736-images-thumbs&n=13" alt="" style="width: 100px; height: 100px">
+{%elif satiety < 50%}
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHKKVogOI8JHHSDzM5tmIgGd9jD_NcscrmKw&usqp=CAU" alt="" style="width: 100px; height: 100px">
+{%endif%}
+<p>Кот - {{name}}</p>
+<p>Возраст - {{year}}</p>
+<p>Уровень счастья - {{happiness}}</p>
+<p>Уровень сытости - {{satiety}}</p>
+<form  method="post">
+    {%csrf_token%}
+      <select name="make">
+          <option value="feed">feed</option>
+          <option value="play">play</option>
+          <option value="sleep">sleep</option>
+    </select>
+    <div class="form_row">
+            <input type="submit">
+        </div>
+</form>
+</body>
+</html>
